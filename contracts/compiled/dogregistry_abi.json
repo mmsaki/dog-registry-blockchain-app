@@ -1,0 +1,487 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_broker",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_brokerID",
+				"type": "string"
+			}
+		],
+		"name": "addBroker",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_broker",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_litterOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_dogBreeder",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_remarks",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_dogBreed",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_dogName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_birthDate",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_litterSize",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_dameID",
+				"type": "string"
+			}
+		],
+		"name": "addBrokerReport",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_dogBreeder",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_dogBreederID",
+				"type": "string"
+			}
+		],
+		"name": "addDogBreeder",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_litterOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_litterOwnerID",
+				"type": "string"
+			}
+		],
+		"name": "addLitterOwner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_litterOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_dogBreeder",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_litterID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_remarks",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_receivedShipment",
+				"type": "string"
+			}
+		],
+		"name": "addLitterOwnerReport",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_dogBreeder",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_veterinarianDoctor",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_litterID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_remarks",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_litterSize",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_healthy",
+				"type": "uint256"
+			}
+		],
+		"name": "addQualityReport",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_veterinarianDoctor",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_veterinarianDoctorID",
+				"type": "string"
+			}
+		],
+		"name": "addVeterinarianDoctor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_dameID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_litterID",
+				"type": "string"
+			}
+		],
+		"name": "BatchtoLot",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "deposit",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "payable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "brokerAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "brokerID",
+				"type": "string"
+			}
+		],
+		"name": "brokerAddition",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "dogBreederAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "dogBreederID",
+				"type": "string"
+			}
+		],
+		"name": "dogBreederAddition",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "litterOwnerAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "litterOwnerID",
+				"type": "string"
+			}
+		],
+		"name": "litterOwnerAddition",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "inspectoAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "inspectoID",
+				"type": "string"
+			}
+		],
+		"name": "veterinarianDoctorAddition",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getbalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_smartContractBalance",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_smartContractAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_ownerWalletBalance",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_ownerWalletAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_broker",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_dameID",
+				"type": "string"
+			}
+		],
+		"name": "getBrokerReport",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "_dogName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_remarks",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_dogBreed",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_birthDate",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_litterSize",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_litterOwner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_dogBreeder",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_litterID",
+				"type": "string"
+			}
+		],
+		"name": "getLitterOwnerReport",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "_remarks",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_receivedShipment",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_dogBreeder",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_litterID",
+				"type": "string"
+			}
+		],
+		"name": "getQualityReport",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "_remarks",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_veterinarianDoctor",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_healthy",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_litterSize",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
