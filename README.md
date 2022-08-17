@@ -9,4 +9,4 @@ The registry dApp tracks the litters produced from a single dame in a single, im
 
 This blockchain application introduces a heretofore unprecedented level of transparency to dog breeding and increases the confidence of dog owners in the veracity of breeding information while supporting responsible breeders, veterinarians, and brokers.
 
-![Diagram](DogRegistry.png)
+![Diagram](DogRegistry.jpg)
