@@ -8,3 +8,5 @@ The dApp that we have developed uses smart contracts and blockchain technology t
 The registry dApp tracks the litters produced from a single dame in a single, immortal blockchain that is accessable to all key actors in the process. For each litter the blockchain records: dame, sire, litter size, health of the puppies, sale of the litter, and buyer/ owner of the litter (Figure 1). The breeder, certifying veterinarian, sale broker, and buyer/ owner are also recorded along with the certifications given by each.
 
 This blockchain application introduces a heretofore unprecedented level of transparency to dog breeding and increases the confidence of dog owners in the veracity of breeding information while supporting responsible breeders, veterinarians, and brokers.
+
+![Diagram](DogRegistry.png)
