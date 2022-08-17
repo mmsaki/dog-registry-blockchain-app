@@ -60,7 +60,7 @@
 				"type": "string"
 			},
 			{
-				"name": "artist",
+				"name": "breed",
 				"type": "string"
 			},
 			{
@@ -76,7 +76,7 @@
 				"type": "string"
 			}
 		],
-		"name": "registerArtwork",
+		"name": "registerDog",
 		"outputs": [
 			{
 				"name": "",
@@ -201,7 +201,7 @@
 			},
 			{
 				"indexed": false,
-				"name": "artJson",
+				"name": "dogJson",
 				"type": "string"
 			}
 		],
@@ -278,37 +278,6 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "artCollection",
-		"outputs": [
-			{
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"name": "artist",
-				"type": "string"
-			},
-			{
-				"name": "appraisalValue",
-				"type": "uint256"
-			},
-			{
-				"name": "artJson",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
 				"name": "owner",
 				"type": "address"
 			}
@@ -331,6 +300,37 @@
 		"outputs": [
 			{
 				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "dogCollection",
+		"outputs": [
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "breed",
+				"type": "string"
+			},
+			{
+				"name": "appraisalValue",
+				"type": "uint256"
+			},
+			{
+				"name": "dogJson",
 				"type": "string"
 			}
 		],
