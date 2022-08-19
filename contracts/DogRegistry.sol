@@ -3,12 +3,40 @@ pragma solidity ^0.5.0;
 
 contract DogRegistry {
 
-    address payable public owner;
-    uint totalamount =0;
-    
-    // Payable constructor can receive Ether
-    constructor() public payable {
-        owner = msg.sender;
+    constructor() public payable { owner = msg.sender; }
+    address payable owner;
+
+    // This contract only defines a modifier but does not use
+    // it: it will be used in derived contracts.
+    // The function body is inserted where the special symbol
+    // `_;` in the definition of a modifier appears.
+    // This means that if the owner calls this function, the
+    // function is executed and otherwise, an exception is
+    // thrown.
+    //Modifiers
+
+    modifier onlyOwner {
+        require(msg.sender == owner,"Only owner can call this function.");
+        _;
+    }
+
+    modifier onlyBroker(address broker) {
+        require(isBroker[broker] == true, "Only broker can call this function.");
+        _;
+    }
+
+    modifier onlyDogBreeder(address dogBreeder){
+        require(isDogBreeder[dogBreeder] == true, "Only breeder can call this function.");
+        _;
+    }
+    modifier onlyVeterinarianDoctor(address veterinarianDoctor){
+        require(isVeterinarianDoctor[veterinarianDoctor] == true, "Only veterinarian can call this function.");
+        _;
+    }
+   
+    modifier onlyPuppyOwner(address puppyOwner){
+        require(isPuppyOwner[puppyOwner] == true, "Only litter owner can call this function.");
+        _;
     }
     
     struct qualityReport{
@@ -22,83 +50,87 @@ contract DogRegistry {
         string receivedShipment;
         qualityReport qualityreport;
     }
-    struct brokerReport{
-        string dogName; // Male Parent
-        string dogBreed;
-        string remarks;
+    struct puppyReport{
+        address dogBreeder;
+        string dameID; 
+        string sireID;
+        string litterID;
+        uint litterSize;
         string birthDate;
-        uint256 litterSizeProduced;
-        litterOwnerReport processedReport;
-        uint puppyID;
+        uint256 puppyID;
+        // litterOwnerReport processedReport;
     }
    
     // Maps address of respective Stakeholders to true
-    mapping(address=>bool) isDogBreeder;
-    mapping(address=>bool) islitterOwner;
-    mapping(address=>bool) isBroker;
-    mapping(address=>bool) isVeterinarianDoctor;
+    mapping(address=>bool) public isDogBreeder;
+    mapping(address=>bool) public isPuppyOwner;
+    mapping(address=>bool) public isBroker;
+    mapping(address=>bool) public isVeterinarianDoctor;
+    mapping(uint=>bool) public isPuppyID;
    
-    // Map Stakeholders address to ID
+    // Map everyone's address to puppy
     mapping(address=>string) dogBreederMapping;
-    mapping(address=>string) litterOwnerMapping;
+    mapping(address=>string) puppyOwnerMapping;
     mapping(address=>string) brokerMapping;
     mapping(address=>string) veterinarianDoctorMapping;
+    mapping(uint=>string) puppyMapping;
    
     //Events
     event dogBreederAddition(address dogBreederAddress,string dogBreederID);
     event litterOwnerAddition(address litterOwnerAddress,string litterOwnerID);
     event brokerAddition(address brokerAddress,string brokerID);
-    event veterinarianDoctorAddition(address inspectoAddress,string inspectoID);
-    //Modifiers
-    modifier onlyDogBreeder(address dogBreeder){
-        require(isDogBreeder[dogBreeder]);
-        _;
-    }
-    modifier onlyVeterinarianDoctor(address veterinarianDoctor){
-        require(isDogBreeder[veterinarianDoctor]);
-        _;
-    }
-    modifier onlyBroker(address broker){
-        require(isBroker[broker]);
-        _;
-    }
-    modifier onlylitterOwner(address litterOwner){
-        require(islitterOwner[litterOwner]);
-        _;
-    }
+    event veterinarianDoctorAddition(address veterinarianAddress,string veterinarianID);
+    event newPuppyAddition(address dogBreederAddress, string puppyID);
+
+  
     
     mapping(address=>mapping(string=>qualityReport)) qualityReports; // mapping of dogBreeders address to litterID and report
     mapping(address=>mapping(address => mapping(string=>litterOwnerReport))) litterOwnerReports;
-    mapping(string => string) lotToBatch;
-    mapping(address=>mapping(string=>brokerReport)) brokerReports;
+    mapping(address=>mapping(string=>puppyReport)) puppyReports;
    
-    function addDogBreeder(address _dogBreeder,string memory _dogBreederID) public {
-        isDogBreeder[_dogBreeder] = true;
-        dogBreederMapping[_dogBreeder] = _dogBreederID;
-        emit dogBreederAddition(_dogBreeder,_dogBreederID);
-    }
-    function addlitterOwner(address _litterOwner,string memory _litterOwnerID) public {
-        islitterOwner[_litterOwner] = true;
-        litterOwnerMapping[_litterOwner] = _litterOwnerID;
-        emit litterOwnerAddition(_litterOwner,_litterOwnerID);
-    }
-    function addVeterinarianDoctor(address _veterinarianDoctor,string memory _veterinarianDoctorID) public {
-        isVeterinarianDoctor[_veterinarianDoctor] = true;
-        veterinarianDoctorMapping[_veterinarianDoctor] = _veterinarianDoctorID;
-        emit veterinarianDoctorAddition(_veterinarianDoctor,_veterinarianDoctorID);
-    }
-    function addBroker(address _broker,string memory _brokerID) public {
+   function addBroker(address _broker,string memory _brokerID) public onlyOwner {
         isBroker[_broker] = true;
         brokerMapping[_broker] = _brokerID;
         emit brokerAddition(_broker,_brokerID);
     }
-    function addQualityReport(address _dogBreeder,address _veterinarianDoctor,string memory _litterID,string memory _remarks,uint256 _litterSize, uint256 _healthy) public {
+
+    function addDogBreeder(address _dogBreeder,string memory _dogBreederID) public onlyBroker(msg.sender) {
+        isDogBreeder[_dogBreeder] = true;
+        dogBreederMapping[_dogBreeder] = _dogBreederID;
+        emit dogBreederAddition(_dogBreeder,_dogBreederID);
+    }
+
+    function addVeterinarianDoctor(address _veterinarianDoctor,string memory _veterinarianDoctorID) public onlyBroker(msg.sender) {
+        isVeterinarianDoctor[_veterinarianDoctor] = true;
+        veterinarianDoctorMapping[_veterinarianDoctor] = _veterinarianDoctorID;
+        emit veterinarianDoctorAddition(_veterinarianDoctor,_veterinarianDoctorID);
+    }
+
+    function addPuppyOwner(address _puppyOwner,string memory _puppyOwnerID) public onlyBroker(msg.sender) {
+        isPuppyOwner[_puppyOwner] = true;
+        puppyOwnerMapping[_puppyOwner] = _puppyOwnerID;
+        emit litterOwnerAddition(_puppyOwner,_puppyOwnerID);
+    }
+    
+    // function addPuppy(address memory _dogBreeder, uint memory _dameID, uint memory _sireID, uint memory _litterID, uint memory _litterSize, uint memory _birthDate, uint memory _puppyID) public onlyDogBreeder(msg.sender) {
+    //     puppyMapping[_dogBreeder] = _dogBreeder; 
+    //     puppyMapping[_dameID] = _dameID;
+    //     puppyMapping[_sireID] = _sireID;
+    //     puppyMapping[_litterID] = _litterID;
+    //     puppyMapping[_litterSize] = _litterSize;
+    //     puppyMapping[_birthDate] = _birthDate;
+    //     puppyMapping[_puppyID] = _puppyID;
+    //     emit newPuppyAddition(_dogBreeder,_puppyID);
+    // }
+
+    function addQualityReport(address _dogBreeder,address _veterinarianDoctor,string memory _litterID,string memory _remarks,uint256 _litterSize, uint256 _healthy) public onlyVeterinarianDoctor(msg.sender) {
         qualityReports[_dogBreeder][_litterID].veterinarianDoctor = _veterinarianDoctor;
         qualityReports[_dogBreeder][_litterID].remarks = _remarks;
         qualityReports[_dogBreeder][_litterID].healthy = _healthy;
         qualityReports[_dogBreeder][_litterID].litterSize = _litterSize;
     }
-    function getQualityReport(address _dogBreeder,string memory _litterID) public view returns(
+
+    function getQualityReport(address _dogBreeder,string memory _litterID) public view returns (
         string memory _remarks,
         address _veterinarianDoctor,
         uint256 _healthy,
@@ -109,52 +141,49 @@ contract DogRegistry {
         _healthy = qualityReports[_dogBreeder][_litterID].healthy;
         _litterSize = qualityReports[_dogBreeder][_litterID].litterSize;
     }
-    function addlitterOwnerReport(address _litterOwner,address _dogBreeder,
-                                string memory _litterID,string memory _remarks,
-                                string memory _receivedShipment) public {
-        litterOwnerReports[_litterOwner][_dogBreeder][_litterID].remarks = _remarks;
-        litterOwnerReports[_litterOwner][_dogBreeder][_litterID].receivedShipment = _receivedShipment;
-        litterOwnerReports[_litterOwner][_dogBreeder][_litterID].qualityreport = qualityReports[_dogBreeder][_litterID];
-    }
-    function getlitterOwnerReport(address _litterOwner,address _dogBreeder,string memory _litterID) public view returns(
-        string memory _remarks,
-        string memory _receivedShipment
-        ){
-        _remarks = litterOwnerReports[_litterOwner][_dogBreeder][_litterID].remarks;
-        _receivedShipment = litterOwnerReports[_litterOwner][_dogBreeder][_litterID].receivedShipment;
-    }
-    function BatchtoLot(string memory _dameID,string memory _litterID) public {
-        lotToBatch[_dameID] = _litterID;
-    }
-    function addBrokerReport(address _broker, address _litterOwner, address _dogBreeder,
-        string memory _remarks,
-        string memory _dogBreed,
-        string memory _dogName,
-        string memory _birthDate,
-        uint256 _litterSize,
-        string memory _dameID,
-        uint256 _puppyID
-    ) public {
-        brokerReports[_broker][_dameID].dogName = _dogName;
-        brokerReports[_broker][_dameID].remarks = _remarks;
-        brokerReports[_broker][_dameID].dogBreed = _dogBreed;
-        brokerReports[_broker][_dameID].birthDate = _birthDate;
-        brokerReports[_broker][_dameID].litterSizeProduced = _litterSize;
-        brokerReports[_broker][_dameID].processedReport = litterOwnerReports[_litterOwner][_dogBreeder][lotToBatch[_dameID]];
-        brokerReports[_broker][_dameID].puppyID = _puppyID;
-    }
-    function getBrokerReport(address _broker,string memory _dameID) public view returns(
-        string memory _dogName,
-        string memory _remarks,
-        string memory _dogBreed,
-        string memory _birthDate,
-        uint256 _litterSize
-        ){
-            _dogName = brokerReports[_broker][_dameID].dogName;
-            _remarks = brokerReports[_broker][_dameID].remarks;
-            _dogBreed = brokerReports[_broker][_dameID].dogBreed;
-            _birthDate = brokerReports[_broker][_dameID].birthDate;
-            _litterSize = brokerReports[_broker][_dameID].litterSizeProduced;
-        }
+
+    // function getlitterOwnerReport(address _litterOwner,address _dogBreeder,string memory _litterID) public view returns(
+    //     string memory _remarks,
+    //     string memory _receivedShipment
+    //     ){
+    //     _remarks = litterOwnerReports[_litterOwner][_dogBreeder][_litterID].remarks;
+    //     _receivedShipment = litterOwnerReports[_litterOwner][_dogBreeder][_litterID].receivedShipment;
+    // }
+
+    // function BatchtoLot(string memory _dameID,string memory _litterID) public {
+    //     lotToBatch[_dameID] = _litterID;
+    // }
+
+    // function addBrokerReport(address _broker, address _litterOwner, address _dogBreeder,
+    //     string memory _remarks,
+    //     string memory _dogBreed,
+    //     string memory _dogName,
+    //     string memory _birthDate,
+    //     uint256 _litterSize,
+    //     string memory _dameID,
+    //     uint256 _puppyID
+    // ) public {
+    //     brokerReports[_broker][_dameID].dogName = _dogName;
+    //     brokerReports[_broker][_dameID].remarks = _remarks;
+    //     brokerReports[_broker][_dameID].dogBreed = _dogBreed;
+    //     brokerReports[_broker][_dameID].birthDate = _birthDate;
+    //     brokerReports[_broker][_dameID].litterSizeProduced = _litterSize;
+    //     brokerReports[_broker][_dameID].processedReport = litterOwnerReports[_litterOwner][_dogBreeder][lotToBatch[_dameID]];
+    //     brokerReports[_broker][_dameID].puppyID = _puppyID;
+    // }
+
+    // function getBrokerReport(address _broker,string memory _dameID) public view returns(
+    //     string memory _dogName,
+    //     string memory _remarks,
+    //     string memory _dogBreed,
+    //     string memory _birthDate,
+    //     uint256 _litterSize
+    //     ){
+    //         _dogName = brokerReports[_broker][_dameID].dogName;
+    //         _remarks = brokerReports[_broker][_dameID].remarks;
+    //         _dogBreed = brokerReports[_broker][_dameID].dogBreed;
+    //         _birthDate = brokerReports[_broker][_dameID].birthDate;
+    //         _litterSize = brokerReports[_broker][_dameID].litterSizeProduced;
+    //     }
    
 }
