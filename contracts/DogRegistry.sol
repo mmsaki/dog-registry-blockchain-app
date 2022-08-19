@@ -1,14 +1,14 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.7.6;
+pragma solidity ^0.5.0;
+
 contract DogRegistry {
-    
-    
+
     address payable public owner;
     uint totalamount =0;
     
     // Payable constructor can receive Ether
-    constructor() payable {
-        owner = payable(msg.sender);
+    constructor() public payable {
+        owner = msg.sender;
     }
     
     struct qualityReport{
@@ -29,11 +29,12 @@ contract DogRegistry {
         string birthDate;
         uint256 litterSizeProduced;
         litterOwnerReport processedReport;
+        uint puppyID;
     }
    
     // Maps address of respective Stakeholders to true
     mapping(address=>bool) isDogBreeder;
-    mapping(address=>bool) isLitterOwner;
+    mapping(address=>bool) islitterOwner;
     mapping(address=>bool) isBroker;
     mapping(address=>bool) isVeterinarianDoctor;
    
@@ -61,8 +62,8 @@ contract DogRegistry {
         require(isBroker[broker]);
         _;
     }
-    modifier onlyLitterOwner(address litterOwner){
-        require(isLitterOwner[litterOwner]);
+    modifier onlylitterOwner(address litterOwner){
+        require(islitterOwner[litterOwner]);
         _;
     }
     
@@ -76,8 +77,8 @@ contract DogRegistry {
         dogBreederMapping[_dogBreeder] = _dogBreederID;
         emit dogBreederAddition(_dogBreeder,_dogBreederID);
     }
-    function addLitterOwner(address _litterOwner,string memory _litterOwnerID) public {
-        isLitterOwner[_litterOwner] = true;
+    function addlitterOwner(address _litterOwner,string memory _litterOwnerID) public {
+        islitterOwner[_litterOwner] = true;
         litterOwnerMapping[_litterOwner] = _litterOwnerID;
         emit litterOwnerAddition(_litterOwner,_litterOwnerID);
     }
@@ -108,19 +109,21 @@ contract DogRegistry {
         _healthy = qualityReports[_dogBreeder][_litterID].healthy;
         _litterSize = qualityReports[_dogBreeder][_litterID].litterSize;
     }
-    function addLitterReport(address _litterOwner,address _dogBreeder, string memory _litterID,string memory _remarks, string memory _receivedShipment) public {
+    function addlitterOwnerReport(address _litterOwner,address _dogBreeder,
+                                string memory _litterID,string memory _remarks,
+                                string memory _receivedShipment) public {
         litterOwnerReports[_litterOwner][_dogBreeder][_litterID].remarks = _remarks;
         litterOwnerReports[_litterOwner][_dogBreeder][_litterID].receivedShipment = _receivedShipment;
         litterOwnerReports[_litterOwner][_dogBreeder][_litterID].qualityreport = qualityReports[_dogBreeder][_litterID];
     }
-    function getLitterOwnerReport(address _litterOwner,address _dogBreeder,string memory _litterID) public view returns(
+    function getlitterOwnerReport(address _litterOwner,address _dogBreeder,string memory _litterID) public view returns(
         string memory _remarks,
         string memory _receivedShipment
         ){
         _remarks = litterOwnerReports[_litterOwner][_dogBreeder][_litterID].remarks;
         _receivedShipment = litterOwnerReports[_litterOwner][_dogBreeder][_litterID].receivedShipment;
     }
-    function BatchtoLot(string memory _dameID,string memory _litterID) public{
+    function BatchtoLot(string memory _dameID,string memory _litterID) public {
         lotToBatch[_dameID] = _litterID;
     }
     function addBrokerReport(address _broker, address _litterOwner, address _dogBreeder,
@@ -129,7 +132,8 @@ contract DogRegistry {
         string memory _dogName,
         string memory _birthDate,
         uint256 _litterSize,
-        string memory _dameID
+        string memory _dameID,
+        uint256 _puppyID
     ) public {
         brokerReports[_broker][_dameID].dogName = _dogName;
         brokerReports[_broker][_dameID].remarks = _remarks;
@@ -137,6 +141,7 @@ contract DogRegistry {
         brokerReports[_broker][_dameID].birthDate = _birthDate;
         brokerReports[_broker][_dameID].litterSizeProduced = _litterSize;
         brokerReports[_broker][_dameID].processedReport = litterOwnerReports[_litterOwner][_dogBreeder][lotToBatch[_dameID]];
+        brokerReports[_broker][_dameID].puppyID = _puppyID;
     }
     function getBrokerReport(address _broker,string memory _dameID) public view returns(
         string memory _dogName,

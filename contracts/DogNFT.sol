@@ -1,6 +1,8 @@
+// SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.5.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC721/ERC721Full.sol";
+import "./DogRegistry.sol";
 
 contract DogNFT is ERC721Full {
     constructor() public ERC721Full("DogRegistryToken", "DOG") {}
@@ -22,7 +24,6 @@ contract DogNFT is ERC721Full {
     ) public view returns (string memory imageJson){
         return dogCollection[tokenId].dogJson;
     }
-
 
     function registerDog(
         address owner,
