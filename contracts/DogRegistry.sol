@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.5;
+
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/AccessControl.sol";
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+
 
 contract DogRegistry {
 
@@ -55,14 +59,15 @@ contract DogRegistry {
     mapping(address=>bool) public isDogBreeder;
     mapping(address=>bool) public isVeterinarianDoctor;
     mapping(address=>bool) public isPuppyOwner;
+    mapping(string=>bool) public isPuppy;
 
     // Map everyone's address to IDs
-    mapping(uint => address) public ownerToDog;
-    mapping(address=>string) dogBreederID;
-    mapping(address=>string) puppyOwnerID;
-    mapping(address=>string) brokerID;
-    mapping(address=>string) veterinarianDoctorID;
-    mapping(address=>string) puppyID;
+    mapping(string => address) public ownerToDog;
+    mapping(address=>string) public dogBreederID;
+    mapping(address=>string) public puppyOwnerID;
+    mapping(address=>string) public brokerID;
+    mapping(address=>string) public veterinarianDoctorID;
+    mapping(uint=>string) public getPuppyID;
     mapping(string=>healthReport) healthReports; 
     
     mapping(uint=>string) seeDocRemarks;
@@ -93,10 +98,11 @@ contract DogRegistry {
         emit veterinarianDoctorAddition(_veterinarianDoctor,_veterinarianDoctorID);
     }
 
-    function addPuppyOwner(address _puppyOwner,string memory _puppyOwnerID) public onlyBroker(msg.sender) {
+    function addPuppyOwner(address _puppyOwner,string memory _puppyID) public onlyBroker(msg.sender) {
         isPuppyOwner[_puppyOwner] = true;
-        puppyOwnerID[_puppyOwner] = _puppyOwnerID;
-        emit puppyOwnerAddition(_puppyOwner,_puppyOwnerID);
+        puppyOwnerID[_puppyOwner] = _puppyID;
+        ownerToDog[_puppyID]= _puppyOwner;
+        emit puppyOwnerAddition(_puppyOwner,_puppyID);
     }
 
     function addDog(
@@ -108,13 +114,14 @@ contract DogRegistry {
         string memory  _breed,
         string memory _birthDate
         ) public onlyDogBreeder(msg.sender) {
-        
+        isPuppy[_puppyID] = true;
         address _dogBreeder = msg.sender;        
         // Push input for the transactor into the dogs array. 
         //This will return the id of the dog in the list (returns the index possition in the array)
         // therefore we stroe it as an unsigned integer named id
         uint index = dogIndex.push(puppyRegister(_puppyID, _dogBreeder, _dameID, _sireID, _litterID, _litterSize, _breed, _birthDate));
-        ownerToDog[index]= _dogBreeder;
+        ownerToDog[_puppyID]= _dogBreeder;
+        getPuppyID[index] = _puppyID;
         emit newPuppyAddition(_dogBreeder, _puppyID, index);
     }
 
@@ -130,3 +137,7 @@ contract DogRegistry {
         emit puppyReportAddition(_puppyID, _veterinarianID, _remarks);
     }
 }
+
+// Add removed Broker/Breeder/Vet?
+// How can contract accept payments for service
+// How can contract interact with NFTs
