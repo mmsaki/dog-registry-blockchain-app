@@ -1,245 +1,143 @@
 [
 	{
+		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
 				"name": "_broker",
 				"type": "address"
 			},
 			{
-				"internalType": "string",
 				"name": "_brokerID",
 				"type": "string"
 			}
 		],
 		"name": "addBroker",
 		"outputs": [],
+		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
+		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_broker",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_litterOwner",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_dogBreeder",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "_remarks",
+				"name": "_puppyID",
 				"type": "string"
 			},
 			{
-				"internalType": "string",
-				"name": "_dogBreed",
+				"name": "_dameID",
 				"type": "string"
 			},
 			{
-				"internalType": "string",
-				"name": "_dogName",
+				"name": "_sireID",
 				"type": "string"
 			},
 			{
-				"internalType": "string",
-				"name": "_birthDate",
+				"name": "_litterID",
 				"type": "string"
 			},
 			{
-				"internalType": "uint256",
 				"name": "_litterSize",
 				"type": "uint256"
 			},
 			{
-				"internalType": "string",
-				"name": "_dameID",
+				"name": "_breed",
+				"type": "string"
+			},
+			{
+				"name": "_birthDate",
 				"type": "string"
 			}
 		],
-		"name": "addBrokerReport",
+		"name": "addDog",
 		"outputs": [],
+		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
+		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
 				"name": "_dogBreeder",
 				"type": "address"
 			},
 			{
-				"internalType": "string",
 				"name": "_dogBreederID",
 				"type": "string"
 			}
 		],
 		"name": "addDogBreeder",
 		"outputs": [],
+		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
+		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_litterOwner",
+				"name": "_puppyOwner",
 				"type": "address"
 			},
 			{
-				"internalType": "string",
-				"name": "_litterOwnerID",
+				"name": "_puppyID",
 				"type": "string"
 			}
 		],
-		"name": "addLitterOwner",
+		"name": "addPuppyOwner",
 		"outputs": [],
+		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
+		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_litterOwner",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_dogBreeder",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "_litterID",
+				"name": "_puppyID",
 				"type": "string"
 			},
 			{
-				"internalType": "string",
-				"name": "_remarks",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_receivedShipment",
-				"type": "string"
-			}
-		],
-		"name": "addLitterOwnerReport",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_dogBreeder",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
 				"name": "_veterinarianDoctor",
 				"type": "address"
 			},
 			{
-				"internalType": "string",
-				"name": "_litterID",
+				"name": "_veterinarianID",
 				"type": "string"
 			},
 			{
-				"internalType": "string",
 				"name": "_remarks",
 				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_litterSize",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_healthy",
-				"type": "uint256"
 			}
 		],
-		"name": "addQualityReport",
+		"name": "addPuppyReport",
 		"outputs": [],
+		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
+		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
 				"name": "_veterinarianDoctor",
 				"type": "address"
 			},
 			{
-				"internalType": "string",
 				"name": "_veterinarianDoctorID",
 				"type": "string"
 			}
 		],
 		"name": "addVeterinarianDoctor",
 		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_dameID",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_litterID",
-				"type": "string"
-			}
-		],
-		"name": "BatchtoLot",
-		"outputs": [],
+		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "deposit",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "_to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "transfer",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
+		"payable": true,
 		"stateMutability": "payable",
 		"type": "constructor"
 	},
@@ -248,32 +146,11 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "address",
-				"name": "brokerAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "string",
-				"name": "brokerID",
-				"type": "string"
-			}
-		],
-		"name": "brokerAddition",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "address",
 				"name": "dogBreederAddress",
 				"type": "address"
 			},
 			{
 				"indexed": false,
-				"internalType": "string",
 				"name": "dogBreederID",
 				"type": "string"
 			}
@@ -286,18 +163,16 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "address",
 				"name": "litterOwnerAddress",
 				"type": "address"
 			},
 			{
 				"indexed": false,
-				"internalType": "string",
 				"name": "litterOwnerID",
 				"type": "string"
 			}
 		],
-		"name": "litterOwnerAddition",
+		"name": "puppyOwnerAddition",
 		"type": "event"
 	},
 	{
@@ -305,14 +180,29 @@
 		"inputs": [
 			{
 				"indexed": false,
-				"internalType": "address",
-				"name": "inspectoAddress",
+				"name": "brokerAddress",
 				"type": "address"
 			},
 			{
 				"indexed": false,
-				"internalType": "string",
-				"name": "inspectoID",
+				"name": "brokerID",
+				"type": "string"
+			}
+		],
+		"name": "brokerAddition",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "veterinarianAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "veterinarianID",
 				"type": "string"
 			}
 		],
@@ -320,167 +210,352 @@
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "withdraw",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getbalance",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "_smartContractBalance",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_smartContractAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_ownerWalletBalance",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_ownerWalletAddress",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
+		"anonymous": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_broker",
+				"indexed": false,
+				"name": "dogBreederAddress",
 				"type": "address"
 			},
 			{
-				"internalType": "string",
-				"name": "_dameID",
-				"type": "string"
-			}
-		],
-		"name": "getBrokerReport",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "_dogName",
+				"indexed": false,
+				"name": "puppyID",
 				"type": "string"
 			},
 			{
-				"internalType": "string",
-				"name": "_remarks",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_dogBreed",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_birthDate",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_litterSize",
+				"indexed": false,
+				"name": "dogIndex",
 				"type": "uint256"
 			}
 		],
-		"stateMutability": "view",
-		"type": "function"
+		"name": "newPuppyAddition",
+		"type": "event"
 	},
 	{
+		"anonymous": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_litterOwner",
-				"type": "address"
+				"indexed": false,
+				"name": "puppyID",
+				"type": "string"
 			},
 			{
-				"internalType": "address",
-				"name": "_dogBreeder",
-				"type": "address"
+				"indexed": false,
+				"name": "veterinarianID",
+				"type": "string"
 			},
 			{
-				"internalType": "string",
-				"name": "_litterID",
+				"indexed": false,
+				"name": "remarks",
 				"type": "string"
 			}
 		],
-		"name": "getLitterOwnerReport",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "_remarks",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_receivedShipment",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+		"name": "puppyReportAddition",
+		"type": "event"
 	},
 	{
+		"constant": true,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_dogBreeder",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "_litterID",
+				"name": "",
 				"type": "string"
 			}
 		],
-		"name": "getQualityReport",
+		"name": "brokerAddress",
 		"outputs": [
 			{
-				"internalType": "string",
-				"name": "_remarks",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "_veterinarianDoctor",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_healthy",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_litterSize",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address payable",
 				"name": "",
 				"type": "address"
 			}
 		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "brokerID",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "dogBreederID",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "dogIndex",
+		"outputs": [
+			{
+				"name": "puppyID",
+				"type": "string"
+			},
+			{
+				"name": "dogBreeder",
+				"type": "address"
+			},
+			{
+				"name": "dameID",
+				"type": "string"
+			},
+			{
+				"name": "sireID",
+				"type": "string"
+			},
+			{
+				"name": "litterID",
+				"type": "string"
+			},
+			{
+				"name": "litterSize",
+				"type": "uint256"
+			},
+			{
+				"name": "breed",
+				"type": "string"
+			},
+			{
+				"name": "birthDate",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "getPuppyID",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isBroker",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isDogBreeder",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "isPuppy",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isPuppyOwner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isVeterinarianDoctor",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "ownerToDog",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "puppyOwnerID",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "reportIndex",
+		"outputs": [
+			{
+				"name": "puppyID",
+				"type": "string"
+			},
+			{
+				"name": "veterinarianDoctor",
+				"type": "address"
+			},
+			{
+				"name": "veterinarianID",
+				"type": "string"
+			},
+			{
+				"name": "remarks",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "veterinarianDoctorID",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
 	}
