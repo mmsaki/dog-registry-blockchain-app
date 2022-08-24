@@ -4,6 +4,7 @@ from web3 import Web3
 from pathlib import Path
 from dotenv import load_dotenv
 import streamlit as st
+from PIL import Image
 
 load_dotenv()
 
@@ -15,6 +16,7 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 # 1. Loads the contract once using cache
 # 2. Connects to the contract using the contract address and ABI
 ################################################################################
+
 
 # Cache the contract on load
 @st.cache(allow_output_mutation=True)
@@ -42,8 +44,11 @@ contract = load_contract()
 
 
 ################################################################################
-# Award Certificate
+# Streamlit App Dog Registry
 ################################################################################
+
+image = Image.open('DogRegistryChain.png')
+st.image(image)
 
 accounts = w3.eth.accounts
 account = accounts[0]
