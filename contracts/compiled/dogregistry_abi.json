@@ -1,394 +1,82 @@
 [
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_broker",
-				"type": "address"
-			},
-			{
-				"name": "_brokerID",
-				"type": "string"
-			}
-		],
-		"name": "addBroker",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_puppyID",
-				"type": "string"
-			},
-			{
-				"name": "_dameID",
-				"type": "string"
-			},
-			{
-				"name": "_sireID",
-				"type": "string"
-			},
-			{
-				"name": "_litterID",
-				"type": "string"
-			},
-			{
-				"name": "_litterSize",
-				"type": "uint256"
-			},
-			{
-				"name": "_breed",
-				"type": "string"
-			},
-			{
-				"name": "_birthDate",
-				"type": "string"
-			}
-		],
-		"name": "addDog",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_dogBreeder",
-				"type": "address"
-			},
-			{
-				"name": "_dogBreederID",
-				"type": "string"
-			}
-		],
-		"name": "addDogBreeder",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_puppyOwner",
-				"type": "address"
-			},
-			{
-				"name": "_puppyID",
-				"type": "string"
-			}
-		],
-		"name": "addPuppyOwner",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_puppyID",
-				"type": "string"
-			},
-			{
-				"name": "_veterinarianDoctor",
-				"type": "address"
-			},
-			{
-				"name": "_veterinarianID",
-				"type": "string"
-			},
-			{
-				"name": "_remarks",
-				"type": "string"
-			}
-		],
-		"name": "addPuppyReport",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_veterinarianDoctor",
-				"type": "address"
-			},
-			{
-				"name": "_veterinarianDoctorID",
-				"type": "string"
-			}
-		],
-		"name": "addVeterinarianDoctor",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "dogBreederAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "dogBreederID",
-				"type": "string"
-			}
-		],
-		"name": "dogBreederAddition",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "litterOwnerAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "litterOwnerID",
-				"type": "string"
-			}
-		],
-		"name": "puppyOwnerAddition",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "brokerAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "brokerID",
-				"type": "string"
-			}
-		],
-		"name": "brokerAddition",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "veterinarianAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "veterinarianID",
-				"type": "string"
-			}
-		],
-		"name": "veterinarianDoctorAddition",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "dogBreederAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "puppyID",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "dogIndex",
-				"type": "uint256"
-			}
-		],
-		"name": "newPuppyAddition",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "puppyID",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "veterinarianID",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "remarks",
-				"type": "string"
-			}
-		],
-		"name": "puppyReportAddition",
-		"type": "event"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
-				"name": "",
-				"type": "string"
+				"name": "interfaceId",
+				"type": "bytes4"
 			}
 		],
-		"name": "brokerAddress",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "brokerID",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "dogBreederID",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "dogIndex",
-		"outputs": [
-			{
-				"name": "puppyID",
-				"type": "string"
-			},
-			{
-				"name": "dogBreeder",
-				"type": "address"
-			},
-			{
-				"name": "dameID",
-				"type": "string"
-			},
-			{
-				"name": "sireID",
-				"type": "string"
-			},
-			{
-				"name": "litterID",
-				"type": "string"
-			},
-			{
-				"name": "litterSize",
-				"type": "uint256"
-			},
-			{
-				"name": "breed",
-				"type": "string"
-			},
-			{
-				"name": "birthDate",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "getPuppyID",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "isBroker",
+		"name": "supportsInterface",
 		"outputs": [
 			{
 				"name": "",
 				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -419,10 +107,10 @@
 		"inputs": [
 			{
 				"name": "",
-				"type": "string"
+				"type": "address"
 			}
 		],
-		"name": "isPuppy",
+		"name": "isBroker",
 		"outputs": [
 			{
 				"name": "",
@@ -434,18 +122,83 @@
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
 				"name": "",
-				"type": "address"
+				"type": "uint256"
 			}
 		],
-		"name": "isPuppyOwner",
+		"name": "dogCollection",
+		"outputs": [
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "breed",
+				"type": "string"
+			},
+			{
+				"name": "dame",
+				"type": "string"
+			},
+			{
+				"name": "sire",
+				"type": "string"
+			},
+			{
+				"name": "appraisalValue",
+				"type": "uint256"
+			},
+			{
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenOfOwnerByIndex",
 		"outputs": [
 			{
 				"name": "",
-				"type": "bool"
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -457,37 +210,40 @@
 		"inputs": [
 			{
 				"name": "",
-				"type": "address"
+				"type": "uint256"
 			}
 		],
-		"name": "isVeterinarianDoctor",
+		"name": "getPuppyID",
 		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
 			{
 				"name": "",
 				"type": "string"
 			}
 		],
-		"name": "ownerToDog",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
 		"payable": false,
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -498,11 +254,56 @@
 				"type": "address"
 			}
 		],
-		"name": "puppyOwnerID",
+		"name": "dogBreederID",
 		"outputs": [
 			{
 				"name": "",
 				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_puppyID",
+				"type": "string"
+			},
+			{
+				"name": "_veterinarianDoctor",
+				"type": "address"
+			},
+			{
+				"name": "_veterinarianID",
+				"type": "string"
+			},
+			{
+				"name": "_remarks",
+				"type": "string"
+			}
+		],
+		"name": "addPuppyReport",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenByIndex",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -541,6 +342,330 @@
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "dog_owner",
+				"type": "address"
+			},
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "breed",
+				"type": "string"
+			},
+			{
+				"name": "dame",
+				"type": "string"
+			},
+			{
+				"name": "sire",
+				"type": "string"
+			},
+			{
+				"name": "initialAppraisalValue",
+				"type": "uint256"
+			},
+			{
+				"name": "tokenURI",
+				"type": "string"
+			},
+			{
+				"name": "tokenJSON",
+				"type": "string"
+			}
+		],
+		"name": "addDog",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_veterinarianDoctor",
+				"type": "address"
+			},
+			{
+				"name": "_veterinarianDoctorID",
+				"type": "string"
+			}
+		],
+		"name": "addVeterinarianDoctor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "baseURI",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"name": "newAppraisalValue",
+				"type": "uint256"
+			},
+			{
+				"name": "reportURI",
+				"type": "string"
+			},
+			{
+				"name": "tokenJSON",
+				"type": "string"
+			}
+		],
+		"name": "newAppraisal",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "imageUri",
+		"outputs": [
+			{
+				"name": "imageURI",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "setApprovalForAll",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "brokerID",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"name": "_data",
+				"type": "bytes"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURI",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "breed",
+				"type": "string"
+			},
+			{
+				"name": "dame",
+				"type": "string"
+			},
+			{
+				"name": "sire",
+				"type": "string"
+			},
+			{
+				"name": "initialAppraisalValue",
+				"type": "uint256"
+			},
+			{
+				"name": "tokenURI",
+				"type": "string"
+			},
+			{
+				"name": "tokenJSON",
+				"type": "string"
+			}
+		],
+		"name": "registerDog",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isVeterinarianDoctor",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
@@ -558,5 +683,253 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_broker",
+				"type": "address"
+			},
+			{
+				"name": "_brokerID",
+				"type": "string"
+			}
+		],
+		"name": "addBroker",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_dogBreeder",
+				"type": "address"
+			},
+			{
+				"name": "_dogBreederID",
+				"type": "string"
+			}
+		],
+		"name": "addDogBreeder",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "dogBreederAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "breederID",
+				"type": "string"
+			}
+		],
+		"name": "dogBreederAddition",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "brokerAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "brokerID",
+				"type": "string"
+			}
+		],
+		"name": "brokerAddition",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "veterinarianAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "vetID",
+				"type": "string"
+			}
+		],
+		"name": "veterinarianDoctorAddition",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "dogBreederAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "puppyID",
+				"type": "string"
+			}
+		],
+		"name": "newPuppyAddition",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "puppyID",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "veterinarianID",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "remarks",
+				"type": "string"
+			}
+		],
+		"name": "puppyReportAddition",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "appraisalValue",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "reportURI",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"name": "Appraisal",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "approved",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "ApprovalForAll",
+		"type": "event"
 	}
 ]
