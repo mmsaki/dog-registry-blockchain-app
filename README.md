@@ -4,7 +4,7 @@
 1. [Project Outline](#project-outline)
 2. [Benefits of using our Dapp Vs Centralized registry application](#benefits-of-using-our-dapp-vs-centralized-registry-dog-applications)
 3. [How our blockchain application works](#how-our-blockchain-application-works)
-4. [Improvements or Updates or Features](#improvements-or-updates-or-features)
+4. [Improvements](#improvements)
 
 ## Project Outline
 The goal of our dog registration application is to increase the confidence of dog owners in the genetic history of their dogs while supporting responsible breeders, veterinarians, and sales agreements.
@@ -94,3 +94,28 @@ Use the select accounts on the sidebar panel to select the account that will be 
     - The front end application provides one `uint` input for a token ID
     - When you click the 'get appraisal report' button, we a checking for contract events from the `Appraisal` function
     - We are also using the token ID as a filter by adding `.createFilter` to get the appraisal reports for the token
+
+
+<div align="center">
+
+![Logo](./dogRegistryLOGO.png)
+
+![Dog Registry Screenshot](./dog_registry_screenshot.jpg)
+
+</div>
+
+
+## Improvements
+
+- Create marketplace functionalities for the dog registry syste,
+    - Our next feature would be to add a marketplace to conduct sales for registered puppies
+    - Add functionalities to bid
+
+## Summary
+
+- Our final project presentation for University of Minnesota Fintect Bootcamp. 
+    - Here's a presentation to go along with this project
+- Collaborators
+    - [Meek Msaki](https://github.com/mmsaki)
+    - [Richard Melvin](https://github.com/rgmelvin)
+    - [Kyle Plathe](https://github.com/kyleplathe)
