@@ -6,8 +6,12 @@
 ## Table of Contents
 1. [Project Outline](#project-outline)
 2. [Benefits of using our Dapp Vs Centralized registry application](#benefits-of-using-our-dapp-vs-centralized-registry-dog-applications)
-3. [How our blockchain application works](#how-our-blockchain-application-works)
-4. [Improvements](#improvements)
+3. [How our application works](#how-our-application-works)
+4. [Step 1: Preparation steps before testing the dapp locally](#step-1-preparation-steps-before-testing-the-dapp-locally)
+5. [Step 2: Running the application](#step-2-running-the-application)
+6. [Step 3: Navigating through the app](#step-3-navigating-through-the-app)
+7. [Improvements](#improvements)
+8. [Summary](#summary)
 
 ## Project Outline
 The goal of our dog registration application is to increase the confidence of dog owners in the genetic history of their dogs while supporting responsible breeders, veterinarians, and sales agreements.
@@ -35,11 +39,11 @@ This blockchain application introduces a heretofore unprecedented level of trans
 
 ![Diagram](DogRegistryChain.png)
 
-## How our blockchain application works
+## How our application works
 
 This application `app.py` is a front end that allows you to interact with a backend smart contract deployed on a test ethereum network.
 
-### Preparation steps before testing the dapp locally
+### Step 1: Preparation steps before testing the dapp locally
 
 1. Set up **Ganache** for a blockchain environment
 2. Import ganache account to your metamask using the provided private keys
