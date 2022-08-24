@@ -104,7 +104,7 @@ When you complete all the steps you should be able to view the NFT of the DOG to
 
 ## Improvements
 
-- Create marketplace functionalities for the dog registry syste,
+- Create marketplace functionalities for our dog registry system
     - Our next feature would be to add a marketplace to conduct sales for registered puppies
     - Add functionalities to bid for NFT tokens
 
