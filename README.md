@@ -11,7 +11,8 @@
 5. [Step 2: Running the application](#step-2-running-the-application)
 6. [Step 3: Navigating through the app](#step-3-navigating-through-the-app)
 7. [Improvements](#improvements)
-8. [Summary](#summary)
+8. [Project Challenges](#project-challenges)
+9. [Summary](#summary)
 
 ## Project Outline
 The goal of our dog registration application is to increase the confidence of dog owners in the genetic history of their dogs while supporting responsible breeders, veterinarians, and sales agreements.
@@ -111,6 +112,17 @@ When you complete all the steps you should be able to view the NFT of the DOG to
 - Create marketplace functionalities for our dog registry system
     - Our next feature would be to add a marketplace to conduct sales for registered puppies
     - Add functionalities to bid for NFT tokens
+
+## Project Challenges
+
+- Setting up smart contracts to work with our idea
+    - Problems with struct having too many variables giving "Stack too deep" solidity error. 
+        - Cleared the error by reducing amounts of variable used
+    - Implimenting NFTs to our project 
+    - Implimenting a trading capabilities to our dog NFTs
+- Getting project done within a short period of time
+- Splitting project work load with team members
+
 
 ## Summary
 
