@@ -1,4 +1,7 @@
-# Dog Registry Blockchain Application
+
+# Dog Registry Blockchain Application 
+
+<img align="right" width="200" height="200" src="./dogRegistryLOGO.png">
 
 ## Table of Contents
 1. [Project Outline](#project-outline)
@@ -34,9 +37,9 @@ This blockchain application introduces a heretofore unprecedented level of trans
 
 ## How our blockchain application works
 
-This application allows you to interact with a backend smart contract that has already been deployed.
+This application `app.py` is a front end that allows you to interact with a backend smart contract deployed on a test ethereum network.
 
-### Step 1: Preparation steps for testing the dapp locally
+### Preparation steps before testing the dapp locally
 
 1. Set up **Ganache** for a blockchain environment
 2. Import ganache account to your metamask using the provided private keys
@@ -95,21 +98,15 @@ Use the select accounts on the sidebar panel to select the account that will be 
     - When you click the 'get appraisal report' button, we a checking for contract events from the `Appraisal` function
     - We are also using the token ID as a filter by adding `.createFilter` to get the appraisal reports for the token
 
-
-<div align="center">
-
-![Logo](./dogRegistryLOGO.png)
+When you complete all the steps you should be able to view the NFT of the DOG token like shown in the figure below.
 
 ![Dog Registry Screenshot](./dog_registry_screenshot.jpg)
-
-</div>
-
 
 ## Improvements
 
 - Create marketplace functionalities for the dog registry syste,
     - Our next feature would be to add a marketplace to conduct sales for registered puppies
-    - Add functionalities to bid
+    - Add functionalities to bid for NFT tokens
 
 ## Summary
 
