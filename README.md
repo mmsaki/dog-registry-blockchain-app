@@ -79,7 +79,7 @@ Use the select accounts on the sidebar panel to select the account that will be 
     - To check if an address is a dog breeder call `isDogBreeder` and provide an ethereum address
 - Step 4: Register Dog
     - Only addresses with a dog breeder role can call `registerDog` to register a puppy. 
-    - To register Dog provide a `dog_owner` address, `name`, `breed`, `dame`, `sire`, `initialAppraisalValue`, `litterID`, `litterSize`, `birthDate`, then upload an `image` to generate a `tokenURI` and `tokenJSON` uploaded to pinata ipfs. 
+    - To register Dog provide a `dog_owner` address, `name`, `breed`, `dame`, `sire`, `initialAppraisalValue`, `litterID`, `litterSize`, `birthDate`, then upload an `image` on the front end to generate a `tokenURI` and `tokenJSON` uploaded through pinata ipfs. 
     - The `registerDog` uses [Dog NFT smart contract](./contracts/DogNFT.sol) smart contract to register a dog to an ERC721 NFT token
     - Produce an NFT for the dogs.
         - The owner recieves a non-fungible token (NFT) unique to their new dog along with access to the breeding and health records.
