@@ -34,6 +34,35 @@ This blockchain application introduces a heretofore unprecedented level of trans
 
 ## How our blockchain application works
 
+This application allows you to interact with a backend smart contract that has already been deployed.
+
+### Step 1: Preparation steps for testing the dapp locally
+
+1. Set up **Ganache** for a blockchain environment
+2. Import ganache account to your metamask using the provided private keys
+3. Import `DogNFT.sol` and `DogRegistry.sol` to Remix IDE 
+4. Compile and Deploy `DogRegistry.sol`  using injected metamask on Remix
+5. Copy the deployed smart contract address into your `.env` environment
+6. Add pinata keys to `.env` file. 
+
+> **Note**
+Use SAMPLE.env file as a template and change the file name from `SAMPLE.env` to `.env` after adding your pinata keys and deployed contract address.
+
+### Step 2: Running the application
+
+Make sure you still have ganache open and running and proceed to run the `app.py` application. 
+
+The application requires streamlit installed so if you don't have it installed, use `pip install streamlit` from your Terminal and then proceed.
+
+Use terminal to `cd` into the `dog-registry-blockchain-app/` directory and use streamlit to run the `app.py` with the following command.
+
+```
+streamlit run app.py
+```
+
+### Step 3: Navigating through the app
+
+Use the select accounts on the sidebar panel to select the account that will be executing function calls on the smart contract. 
 
 ## Improvements or Updates or Features
 
