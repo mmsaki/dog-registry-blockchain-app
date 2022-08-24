@@ -66,8 +66,8 @@ Use the select accounts on the sidebar panel to select the account that will be 
 
 - Step 1 : Add Broker
     - The contract deployer can assign a broker role account by calling the `addBroker` to add broker address and a broker Id
-    - The broker role has the ability to add a veterinary doctor
-    - The broker role has the ability to add a dog breeder by calling the `addVeterinaryDoctor` function
+    - The broker role has the ability to add a veterinary doctor by calling the `addVeterinaryDoctor` function
+    - The broker role has the ability to add a dog breeder by calling the `addDogBreeder` function
     - To check if an address is a broker call `isBroker` and provide an ethereum address
 - Step 2: Add Veterinary Doctor
     - Only addresses with the broker has rights to add a new veterinary doctor by calling `addVeterinaryDoctor` function
