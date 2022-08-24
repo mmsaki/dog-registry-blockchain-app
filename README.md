@@ -1,6 +1,6 @@
 # Dog Registry Blockchain Application
 
-## Table of contents
+## Table of Contents
 1. Project Outline
 2. Benefits of using our Dapp Vs Centralized registry application
 3. How our blockchain application works
@@ -15,16 +15,16 @@ The goal of our dog registration application is to increase the confidence of do
 
 The application that we have developed uses smart contracts and blockchain technology to verify and store dog registry data on a blockchain contract. 
 
-Benefits of using a decentralized application(DAPP) compared to traditional dog registries: 
-    - Verify dog breed lineage easily
-    - Prevent fraud activities
-    - Improve transparancy
-    - Realtime accounting
-    - Cost reduction for registrations
-    - Imutability
-    - Decentralized ledger accessible to the public
-    - Increased trust in record keeping
-    - Programable sytstem
+Benefits of using a decentralized application (DAPP) compared to traditional dog registries: 
+- Verify dog breed lineage easily
+- Prevent fraud activities
+- Improve transparancy
+- Realtime accounting
+- Cost reduction for registrations
+- Imutability
+- Decentralized ledger accessible to the public
+- Increased trust in record keeping
+- Programable sytstem
 
 The registry dapp tracks a puppy from broker to new owner in a single, immortal, blockchain smart contract that is accessable to all key actors in the process. For each litter the blockchain record has relavent identities, certifications and information (Figure 1). The broker or kennel club, certifys a veterinarian, and buyer/ owner are also recorded along with the certifications given by each entity. 
 
