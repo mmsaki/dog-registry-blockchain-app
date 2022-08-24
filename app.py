@@ -46,11 +46,13 @@ contract = load_contract()
 
 # Dog Registry app structure 
 
-image = Image.open('DogRegistryChain.png')
+image = Image.open('./DogRegistryChain.png')
 st.image(image)
 
 # Adding sidebar for ERC721 token name
 with st.sidebar:
+    image = Image.open('./dogRegistryLOGO.png')
+    st.image(image)
     if st.button("name"):
         receipt = contract.functions.name().call()
         # view receipt
