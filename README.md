@@ -83,13 +83,14 @@ Use the select accounts on the sidebar panel to select the account that will be 
     - The `registerDog` is a function from [Dog NFT smart contract](./contracts/DogNFT.sol) smart contract to register a dog via an ERC721 NFT token
     - Produces an NFT for the puppy.
         - The owner recieves a non-fungible token (NFT) unique to their new dog along with access to the breeding and health records.
-- Step 4: Add Puppy Health Records
+- Step 5: Add Puppy Health Records
     - A veterinary doctor role can add puppy health record by calling `addPuppyReport` function
     - The front end provides inputs to call the contract funtion via text inputs
-- Step 5: Appraise Dog
-    - Only addresses assigned a token id belonging to a puppy can appraise the the puppy's value
-    - The front end provide an input for a token ID, new appraisal amount and details for the appraisal report.
-- Step 6: Get the appraisal report History
-    - The front end application provides one input for a token ID
-    - The get appraisal report button checks for contract events for the `Appraisal` function
-    - We are using the token ID as a filter by adding `.createFilter` to get the appraisal reports for the token.
+- Step 6: Appraise Dog
+    - Only addresses assigned a token id belonging to a puppy NFT can appraise the the puppy's value by calling `Appraisal` function
+    - The front end provide an input for a token ID, new appraisal amount and details for the appraisal report
+    - There is also a funtion `ownerOf` that takes in a token Id `uint` value to check the current owner of the NFT DOG token
+- Step 7: Get the appraisal report History
+    - The front end application provides one `uint` input for a token ID
+    - When you click the 'get appraisal report' button, we a checking for contract events from the `Appraisal` function
+    - We are also using the token ID as a filter by adding `.createFilter` to get the appraisal reports for the token
