@@ -41,7 +41,7 @@ This application allows you to interact with a backend smart contract that has a
 1. Set up **Ganache** for a blockchain environment
 2. Import ganache account to your metamask using the provided private keys
 3. Import `DogNFT.sol` and `DogRegistry.sol` to Remix IDE 
-4. Compile and Deploy `DogRegistry.sol`  using injected metamask on Remix
+4. Compile and Deploy `DogRegistry.sol`  using injected metamask on Remix IDE
 5. Copy the deployed smart contract address into your `.env` environment
 6. Add pinata keys to `.env` file. 
 
@@ -64,8 +64,32 @@ streamlit run app.py
 
 Use the select accounts on the sidebar panel to select the account that will be executing function calls on the smart contract. 
 
-## Improvements or Updates or Features
-
-- Produce an NFT for the dogs.
-    - The owner recieves a non-fungible token (NFT) unique to their new dog along with access to the breeding and health records.
-    - We  have created an [NFT smart contract app](./dog-nft-app.py) but it has not been integreted to the dog registry system.
+- Step 1 : Add Broker
+    - Only the deployer of the contract has access to register a Broker account and assign a broker Id by calling the `addBroker`
+    - The broker role has the ability to add a veterinary doctor
+    - The broker role has the ability to add a dog breeder by calling the `addVeterinaryDoctor` function
+    - To check if an address is a broker call `isBroker` and provide an ethereum address
+- Step 2: Add Veterinary Doctor
+    - Only addresses with the broker has rights to add a new veterinary doctor by calling `addVeterinaryDoctor` function
+    - The Veterinary doctor is the only entity that can call `addPuppyReport` to add a health report for a reigstered puppy
+    - To check if an address is a veterinary doctor call `isVeterinaryDoctor` and provide an ethereum address
+- Step 3: Add Dog Breeder
+    - The broker is the only role that can add a dog breeder by calling `addDogBreeder` function
+    - The dog breeder role has the ability to register a puppy by calling `registerDog` or `addDog` function
+    - To check if an address is a dog breeder call `isDogBreeder` and provide an ethereum address
+- Step 4: Register Dog
+    - Only addresses with the dog breeder role can call `registerDog` to register a puppy. 
+    - To register Dog provide a `dog_owner` address, `name`, `breed`, `dame`, `sire`, `initialAppraisalValue`, `litterID`, `litterSize`, `birthDate`, then upload an `image` to generate a `tokenURI` and `tokenJSON` uploaded to pinata ipfs. 
+    - The `registerDog` uses [Dog NFT smart contract](./contracts/DogNFT.sol) smart contract to register a dog to an ERC721 NFT token
+    - Produce an NFT for the dogs.
+        - The owner recieves a non-fungible token (NFT) unique to their new dog along with access to the breeding and health records.
+- Step 4: Add Puppy Health Records
+    - The veterinary doctor can add puppy helath records by calling `addPuppyReport` function
+    - The front end provides inputs to call the contract funtion
+- Step 5: Appraise Dog
+    - Only addresses assigned a token id belonging to a puppy can appraise the the puppy's value
+    - The front end provide an input for a token ID, new appraisal amount and details for the appraisal report.
+- Step 6: Get the appraisal report History
+    - The front end application provides one input for a token ID
+    - The get appraisal report button checks for contract events for the `Appraisal` function
+    - We are using the token ID as a filter by adding `.createFilter` to get the appraisal reports for the token.
