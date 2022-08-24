@@ -47,14 +47,15 @@ contract = load_contract()
 
 accounts = w3.eth.accounts
 account = accounts[0]
-owner_account = st.selectbox("Select Account", options=accounts)
+selected_account = st.selectbox("Select Account", options=accounts)
 
 st.markdown("## Add Broker")
+st.markdown('##### Deployer adds Broker')
 broker_address = st.text_input("Broker Address")
 broker_id = st.text_input("Broker ID")
 # Add broker button
 if st.button("Add Broker"):
-    tx_hash = contract.functions.addBroker(broker_address, broker_id).transact({'from': account, 'gas': 1000000})
+    tx_hash = contract.functions.addBroker(broker_address, broker_id).transact({'from': selected_account, 'gas': 1000000})
     # view receipt
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     st.write(receipt)
@@ -63,12 +64,13 @@ if st.button("Add Broker"):
 # Add Veterinarian Doctor
 ################################################
 st.markdown("## Add Veterinarian Doctor")
+st.markdown('##### Broker adds Doctor')
 veterinarian_address = st.text_input("Veterinarian  Address")
 veterinarian_id = st.text_input("Dog Veterinarian  ID")
 
 # Add Veterinarian button
 if st.button("Add Veterinarian Doctor"):
-    tx_hash = contract.functions.addVeterinarianDoctor(veterinarian_address, veterinarian_id).transact({'from': account, 'gas': 1000000})
+    tx_hash = contract.functions.addVeterinarianDoctor(veterinarian_address, veterinarian_id).transact({'from': selected_account, 'gas': 1000000})
     # View Receipt
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     st.write(receipt)
@@ -78,12 +80,13 @@ if st.button("Add Veterinarian Doctor"):
 ################################################
 
 st.markdown("## Add Dog Breeder")
+st.markdown('##### Broker adds Dog Breeder')
 breeder_address = st.text_input("Breeder Address")
 breeder_id = st.text_input("Dog Breeder ID")
 
 # Add breeder button
 if st.button("Add Dog Breeder"):
-    tx_hash = contract.functions.addDogBreeder(breeder_address, breeder_id).transact({'from': account, 'gas': 1000000})
+    tx_hash = contract.functions.addDogBreeder(breeder_address, breeder_id).transact({'from': selected_account, 'gas': 1000000})
     # View Receipt
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     st.write(receipt)
@@ -93,6 +96,7 @@ if st.button("Add Dog Breeder"):
 ################################################
 
 st.markdown("## Register New Puppy")
+st.markdown('##### Dog Breeder adds Puppy')
 puppy_id = st.text_input("Enter the puppy ID")
 dame_id = st.text_input("Enter the dame ID")
 sire_id = st.text_input("Enter the dog sire ID")
@@ -102,7 +106,7 @@ dog_breed = st.text_input("Enter the dog breed")
 birth_date= st.text_input("Enter the dog birth date")
 
 if st.button("Register New Puppy"):
-    tx_hash = contract.functions.addDog(puppy_id,dame_id,sire_id,litter_id,litter_size,dog_breed,birth_date).transact({'from': account, 'gas': 1000000})
+    tx_hash = contract.functions.addDog(puppy_id,dame_id,sire_id,litter_id,litter_size,dog_breed,birth_date).transact({'from': selected_account, 'gas': 1000000})
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     st.write(receipt)
 
@@ -111,7 +115,7 @@ if st.button("Register New Puppy"):
 ################################################
 
 st.markdown("## Add Puppy Health Report")
-
+st.markdown('##### Doctor adds Health Report')
 puppy_id = st.text_input("Puppy ID")
 vet_address = st.text_input("Vet  Address")
 vet_id = st.text_input("Vet  ID")
@@ -119,7 +123,7 @@ remarks = st.text_input("Add Remarks")
 
 # Add breeder button
 if st.button("Add Health Report"):
-    tx_hash = contract.functions.addPuppyReport(puppy_id, vet_address, vet_id, remarks).transact({'from': account, 'gas': 1000000})
+    tx_hash = contract.functions.addPuppyReport(puppy_id, vet_address, vet_id, remarks).transact({'from': selected_account, 'gas': 1000000})
     # View Receipt
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     st.write(receipt)
@@ -129,12 +133,13 @@ if st.button("Add Health Report"):
 ################################################
 
 st.markdown("## Assign Dog Owner")
+st.markdown('##### Broker adds New Dog Owner')
 owner_address = st.text_input("Owner Address")
 puppy_id = st.text_input("PuppyID")
 
 # Add breeder button
 if st.button("Add Dog Owner"):
-    tx_hash = contract.functions.addPuppyOwner(owner_address, puppy_id).transact({'from': account, 'gas': 1000000})
+    tx_hash = contract.functions.addPuppyOwner(owner_address, puppy_id).transact({'from': selected_account, 'gas': 1000000})
     # View Receipt
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     st.write(receipt)
