@@ -84,8 +84,8 @@ Use the select accounts on the sidebar panel to select the account that will be 
     - Produces an NFT for the puppy.
         - The owner recieves a non-fungible token (NFT) unique to their new dog along with access to the breeding and health records.
 - Step 4: Add Puppy Health Records
-    - The veterinary doctor can add puppy helath records by calling `addPuppyReport` function
-    - The front end provides inputs to call the contract funtion
+    - A veterinary doctor role can add puppy health record by calling `addPuppyReport` function
+    - The front end provides inputs to call the contract funtion via text inputs
 - Step 5: Appraise Dog
     - Only addresses assigned a token id belonging to a puppy can appraise the the puppy's value
     - The front end provide an input for a token ID, new appraisal amount and details for the appraisal report.
