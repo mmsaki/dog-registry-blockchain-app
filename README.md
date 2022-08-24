@@ -65,7 +65,7 @@ streamlit run app.py
 Use the select accounts on the sidebar panel to select the account that will be executing function calls on the smart contract. 
 
 - Step 1 : Add Broker
-    - Only the deployer of the contract has access to register a Broker account and assign a broker Id by calling the `addBroker`
+    - Only the contract deployer of the contract has access to register a Broker account and assign a broker Id by calling the `addBroker`
     - The broker role has the ability to add a veterinary doctor
     - The broker role has the ability to add a dog breeder by calling the `addVeterinaryDoctor` function
     - To check if an address is a broker call `isBroker` and provide an ethereum address
