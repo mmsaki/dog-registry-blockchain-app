@@ -1,10 +1,10 @@
 # Dog Registry Blockchain Application
 
 ## Table of Contents
-1. Project Outline
-2. Benefits of using our Dapp Vs Centralized registry application
-3. How our blockchain application works
-4. 
+1. [Project Outline](#project-outline)
+2. [Benefits of using our Dapp Vs Centralized registry application](#benefits-of-using-our-dapp-vs-centralized-registry-dog-applications)
+3. [How our blockchain application works](#how-our-blockchain-application-works)
+4. [Improvements or Updates or Features](#improvements-or-updates-or-features)
 
 ## Project Outline
 The goal of our dog registration application is to increase the confidence of dog owners in the genetic history of their dogs while supporting responsible breeders, veterinarians, and sales agreements.
