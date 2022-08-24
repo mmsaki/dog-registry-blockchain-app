@@ -9,5 +9,5 @@ The registry dApp tracks a puppy from breeder to new owner in a single, immortal
 
 This blockchain application introduces a heretofore unprecedented level of transparency to dog breeding and increases the confidence of dog owners in the veracity of breeding information while supporting responsible breeders, veterinarians, and brokers.
 
-![Diagram](DogRegistry.png)
+![Diagram](DogRegistryChain.png)
 ## Figure 1. Outline of the Dog Registry dApp.
