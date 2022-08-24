@@ -70,12 +70,12 @@ Use the select accounts on the sidebar panel to select the account that will be 
     - The broker role has the ability to add a dog breeder by calling the `addDogBreeder` function
     - To check if an address is a broker call `isBroker` and provide an ethereum address
 - Step 2: Add Veterinary Doctor
-    - Only addresses with the broker has rights to add a new veterinary doctor by calling `addVeterinaryDoctor` function
-    - The Veterinary doctor is the only entity that can call `addPuppyReport` to add a health report for a reigstered puppy
+    - Only addresses with a broker role can add a new veterinary doctor by calling `addVeterinaryDoctor` function
+    - The Veterinary doctor is the only role that can add a health report for a reigstered puppy by calling `addPuppyReport` function
     - To check if an address is a veterinary doctor call `isVeterinaryDoctor` and provide an ethereum address
 - Step 3: Add Dog Breeder
-    - The broker is the only role that can add a dog breeder by calling `addDogBreeder` function
-    - The dog breeder role has the ability to register a puppy by calling `registerDog` or `addDog` function
+    - The broker role is the only role that can add a dog breeder by calling `addDogBreeder` function
+    - The dog breeder role has the ability to register a puppy by calling `registerDog` or `addDog` functions
     - To check if an address is a dog breeder call `isDogBreeder` and provide an ethereum address
 - Step 4: Register Dog
     - Only addresses with the dog breeder role can call `registerDog` to register a puppy. 
