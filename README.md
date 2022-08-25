@@ -119,8 +119,8 @@ When you complete all the steps you should be able to view the NFT of the **DOG 
 - Setting up smart contracts to work with our idea
     - Problems with struct having too many variables giving **"Stack too deep"** solidity error. 
         - Cleared the error by reducing amounts of variable used
-    - Implimenting NFTs to our project 
-    - Implimenting a trading capabilities to our dog NFTs
+    - Implementing NFTs to our project 
+    - Implementing a trading capabilities to our dog NFTs
 - Getting project done within a short period of time
 - Splitting project work load with team members
 
