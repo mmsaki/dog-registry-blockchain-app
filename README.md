@@ -1,5 +1,5 @@
 
-# Dog Registry Blockchain Application with Dog NFTs
+# Dog Registry Blockchain Application with Dog NFTs 🐶
 
 <img align="right" width="200" height="200" src="./dogRegistryLOGO.png">
 
