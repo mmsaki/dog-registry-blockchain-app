@@ -1,5 +1,5 @@
 
-# Dog Registry Application using ~ Dog NFTs 🐶
+# Dog Registry DAPP using ~ Dog NFTs 🐶
 
 <img align="right" width="200" height="200" src="./dogRegistryLOGO.png">
 
